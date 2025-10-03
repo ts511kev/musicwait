@@ -4,7 +4,6 @@ import threading
 import pyaudio as pa
 import numpy as np
 
-
 class Music:
 
     OH_SUSANNA = [
@@ -145,7 +144,7 @@ class Music:
         ("D0", 6, None),
         ("C0", 2, None),
         ("C0", 5, "Gwine"),
-        ("C0", 7, "to"),
+        ("C0", 8, "to"),
         ("E0", 6, "run"),
         ("G0", 6, "all"),
         ("C1", 2, "night!"),
@@ -284,10 +283,3 @@ class MusicWait:
                 self._audio.play(
                     self._scales[hz], self._notes[note], text if self._lyrics else None
                 )
-
-
-if __name__ == "__main__":
-    import time
-
-    with MusicWait(Music.CAMPTOWN_RACES, lyrics=True):
-        time.sleep(1000)
