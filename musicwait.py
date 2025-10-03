@@ -269,7 +269,7 @@ class MusicWait:
                 res[name] = hz
             return res
 
-        def play(self, hz, note, text: None | str = None, gain=1.0):
+        def play(self, hz, note, text: Optional[str] = None, gain=1.0):
             if text is not None:
                 print(text)
             self.stream.write(self.__tone(hz, note, gain).astype(np.float32).tobytes())
