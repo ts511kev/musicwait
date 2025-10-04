@@ -247,7 +247,7 @@ class MusicWait:
     def __init__(
         self,
         music: Union[List[Tuple[str, int, Optional[str]]],List[Tuple[str, int, None]]] = Music.OH_SUSANNA,
-        bpm: int = 10,
+        bpm: int = 8,
         lyrics: bool = False,
     ):
 
