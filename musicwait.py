@@ -118,10 +118,14 @@ class Music:
         ("A0", 6, "five"),
         ("G0", 6, "miles"),
         ("E0", 4, "long,"),
-        ("D0", 4, "oh!"),
-        ("E0", 6, "doo-dah day!"),
+        ("D0", 5, "oh!"),
+        ("F0", 8, "doo-dah day!"),
+        ("E0", 6, None),
         ("D0", 6, None),
-        ("C0", 2, None),
+        ("C0", 6, None),
+        ("E0", 6, None),
+        ("C0", 4, None),
+
         ("G0", 6, "I come"),
         ("G0", 6, "down"),
         ("E0", 6, "dah"),
@@ -140,10 +144,14 @@ class Music:
         ("A0", 6, "pocket"),
         ("G0", 6, "full of"),
         ("E0", 4, "tin,"),
-        ("D0", 4, "oh,"),
-        ("E0", 6, "doo-dah day!"),
+        ("D0", 5, "oh!"),
+        ("F0", 8, "doo-dah day!"),
+        ("E0", 6, None),
         ("D0", 6, None),
-        ("C0", 2, None),
+        ("C0", 6, None),
+        ("E0", 6, None),
+        ("C0", 4, None),
+
         ("C0", 5, "Gwine"),
         ("C0", 8, "to"),
         ("E0", 6, "run"),
@@ -322,6 +330,8 @@ class MusicWait:
             notes.append(self.note1 / 8)
             notes.append(self.note1 / 16 * 1.5)
             notes.append(self.note1 / 16)
+            notes.append(self.note1 / 32 * 1.5)
+            notes.append(self.note1 / 32)
             return notes
 
         # 音階
