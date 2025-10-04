@@ -1,5 +1,6 @@
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Union
 import threading
+import time
 
 import pyaudio as pa
 import numpy as np
@@ -170,19 +171,85 @@ class Music:
         ("C0", 2, "bay!"),
     ]
 
+    ANNIE_LAURIE=[
+        ("E0", 5, None),
+        ("D0", 8, None),
+        ("C0", 3, None),
+        ("C0", 6, None),
+        ("C1", 3, None),
+        ("B0", 6, None),
+        ("B0", 4, None),
+        ("A0", 2, None),
+        ("A0", 4, None),
+        ("G0", 3, None),
+        ("E0", 6, None),
+        ("E0", 4, None),
+        ("D0", 6, None),
+        ("C0", 6, None),
+        ("D0", 1, None),
+        
+        ("E0", 5, None),
+        ("D0", 8, None),
+        ("C0", 3, None),
+        ("C0", 6, None),
+        ("C1", 3, None),
+        ("B0", 6, None),
+        ("B0", 4, None),
+        ("A0", 2, None),
+        ("A0", 4, None),
+        ("G0", 3, None),
+        ("E0", 6, None),
+        ("E0", 3, None),
+        ("D0", 6, None),
+        ("C0", 1, None),
+
+        ("G0", 4, None),
+        ("C1", 3, None),
+        ("C1", 6, None),
+        ("D1", 3, None),
+        ("D1", 6, None),
+        ("E1", 1, None),
+        
+        ("G0", 4, None),
+        ("C1", 3, None),
+        ("C1", 6, None),
+        ("D1", 3, None),
+        ("D1", 6, None),
+        ("E1", 1, None),
+        
+        ("E1", 5, None),
+        ("D1", 8, None),
+        ("C1", 3, None),
+        ("B0", 6, None),
+        ("A0", 4, None),
+        ("C1", 6, None),
+        ("A0", 6, None),
+        ("G0", 4, None),
+        ("E0", 2, None),
+        
+        ("E0", 6, None),
+        ("D0", 6, None),
+        ("C0", 6, None),
+        ("C1", 4, None),
+        ("E0", 6, None),
+        ("E0", 3, None),
+        ("D0", 6, None),
+        ("C0", 1, None),
+    ]
 
 class MusicWait:
 
     def __init__(
         self,
-        music: List[Tuple[str, int, Optional[str]]] = Music.OH_SUSANNA,
+        music: Union[List[Tuple[str, int, Optional[str]]],List[Tuple[str, int, None]]] = Music.OH_SUSANNA,
+        bpm: int = 10,
         lyrics: bool = False,
     ):
 
         self._play = False
         self._lyrics = lyrics
         self._music = music
-        self._audio = MusicWait.Audio(bpm=10)
+        self._audio = MusicWait.Audio(bpm=bpm)
         self._scales = self._audio.make_scale()
         self._notes = self._audio.make_note()
 
@@ -261,7 +328,7 @@ class MusicWait:
         def make_scale(self):
             res = {}
             octave = -1
-            for n in range(0, 13):
+            for n in range(0, 20):
                 hz = self.a_hz * 2 ** ((n - 9) / 12)
                 if (n % 12) == 0:
                     octave += 1
@@ -272,7 +339,9 @@ class MusicWait:
         def play(self, hz, note, text: Optional[str] = None, gain=1.0):
             if text is not None:
                 print(text)
-            self.stream.write(self.__tone(hz, note, gain).astype(np.float32).tobytes())
+            note2 = note*0.9
+            self.stream.write(self.__tone(hz, note2, gain).astype(np.float32).tobytes())
+            time.sleep(note*0.1)
 
     def loop_music(self):
 
