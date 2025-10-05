@@ -100,7 +100,7 @@ class Music:
         ("C0", 3, "knee."),
     ]
 
-    CAMPTOWN_RACES = [
+    DE_CAMPTOWN_RACES = [
         ("G0", 6, "De camptown"),
         ("G0", 6, None),
         ("E0", 6, "ladies"),
@@ -461,7 +461,11 @@ class Music:
         ("A0", 6, "is"),
         ("F0", 5, "nebber"),
         ("G0", 8, None),
-        ("A0", 6, "dreary",),
+        (
+            "A0",
+            6,
+            "dreary",
+        ),
         ("C1", 4, None),
         ("C1", 6, "If"),
         ("D1", 6, "de"),
