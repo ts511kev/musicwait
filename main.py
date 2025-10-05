@@ -4,7 +4,7 @@ from tqdm import tqdm
 import time
 
 with MusicWait(music=Music.OH_SUSANNA, lyrics=False):
-    for _ in tqdm(range(100)):
+    for _ in tqdm(range(200)):
         time.sleep(0.3)
 
 print("Done!")
