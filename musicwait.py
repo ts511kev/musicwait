@@ -237,7 +237,7 @@ class Music:
         ("C0", 1, None),
     ]
 
-    _ENTERTAINER_PRE = [
+    THE_ENTERTAINER_INTRO = [
         ("D2", 6, None),
         ("E2", 6, None),
         ("C2", 6, None),
@@ -261,7 +261,7 @@ class Music:
         ("G0", 4, None),
     ]
 
-    _ENTERTAINER_A = [
+    THE_ENTERTAINER_A = [
         ("D0", 6, None),
         ("D#0", 6, None),
         ("E0", 6, None),
@@ -341,7 +341,7 @@ class Music:
         ("C1", 1, None),
     ]
 
-    _ENTERTAINER_B = [
+    THE_ENTERTAINER_B = [
         ("E1", 6, None),
         ("F1", 6, None),
         ("F#1", 6, None),
@@ -444,12 +444,12 @@ class Music:
     THE_ENTERTAINER = (
         []
         # + _ENTERTAINER_PRE
-        + _ENTERTAINER_A * 2
-        + _ENTERTAINER_B
+        + THE_ENTERTAINER_A * 2
+        + THE_ENTERTAINER_B
         + [
             ("C1", 3, None),
         ]
-        + _ENTERTAINER_B
+        + THE_ENTERTAINER_B
         + [
             ("C1", 4, None),
             ("C2", 4, None),
@@ -608,8 +608,8 @@ class Music:
         ("G0", 2, "way"),
         ("A#0", 4, "to"),
         ("F0", 1, "go;"),
-        ("A#0", 6, "It's"),
-        ("D0", 6, "a"),
+        ("D0", 6, "It's"),
+        ("D#0", 6, "a"),
         ("F0", 4, "long"),
         ("F0", 3, "way"),
         ("F0", 6, "to"),
