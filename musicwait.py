@@ -539,6 +539,119 @@ class Music:
         ("F0", 3, "long."),
     ]
 
+    TIPPERARY = [
+        ("A#0", 6, "Up"),
+        ("D1", 6, "to"),
+        ("C1", 6, "mighty"),
+        ("A#0", 6, None),
+        ("G0", 6, "London"),
+        ("F0", 6, None),
+        ("D0", 6, "came"),
+        ("D#0", 6, "an"),
+        ("F0", 6, "Irish"),
+        ("G0", 6, None),
+        ("F0", 6, "man"),
+        ("D0", 6, "one"),
+        ("F0", 2, "day,"),
+        ("A#0", 6, "As"),
+        ("D1", 6, "the"),
+        ("C1", 6, "street"),
+        ("A#0", 6, "are"),
+        ("G0", 6, "paved"),
+        ("F0", 6, "with"),
+        ("D0", 6, "gold,"),
+        ("D#0", 6, "sure"),
+        ("A0", 6, "everyone"),
+        ("A#0", 6, None),
+        ("A0", 6, None),
+        ("E0", 6, "was"),
+        ("A0", 2, "gay."),
+        ("A#0", 6, "Singing"),
+        ("D1", 6, None),
+        ("C1", 6, "songs"),
+        ("A#0", 6, "of"),
+        ("G0", 6, "Piccadilly,"),
+        ("F0", 6, None),
+        ("D0", 6, None),
+        ("D#0", 6, None),
+        ("A0", 6, "Strand"),
+        ("A#0", 6, "and"),
+        ("A0", 6, "Leicester"),
+        ("E0", 6, None),
+        ("A0", 3, "Square,"),
+        ("C1", 6, "Till"),
+        ("D1", 6, "Paddy"),
+        ("C1", 6, None),
+        ("A#0", 6, "got"),
+        ("A0", 6, "excited,"),
+        ("C1", 6, None),
+        ("A#0", 6, None),
+        ("C1", 6, "then"),
+        ("D1", 6, "he"),
+        ("A0", 6, "shouted"),
+        ("G0", 6, None),
+        ("A0", 6, "to"),
+        ("A#0", 6, "them"),
+        ("C1", 4, "their:"),
+        ("D0", 6, '''"It's'''),
+        ("D#0", 6, "a"),
+        ("F0", 4, "long"),
+        ("F0", 3, "way"),
+        ("F0", 6, "to"),
+        ("G0", 6, "Tipperary,"),
+        ("A0", 6, None),
+        ("A#0", 4, None),
+        ("D1", 2, None),
+        ("D1", 6, "It's"),
+        ("C1", 6, "a"),
+        ("A#0", 4, "long"),
+        ("G0", 2, "way"),
+        ("A#0", 4, "to"),
+        ("F0", 1, "go;"),
+        ("A#0", 6, "It's"),
+        ("D0", 6, "a"),
+        ("F0", 4, "long"),
+        ("F0", 3, "way"),
+        ("F0", 6, "to"),
+        ("G0", 6, "Tipperary,"),
+        ("A0", 6, None),
+        ("A#0", 4, None),
+        ("D1", 2, None),
+        ("A#0", 6, "To"),
+        ("B0", 6, "the"),
+        ("C1", 4, "sweetest"),
+        ("G0", 4, None),
+        ("A0", 4, "girl"),
+        ("A#0", 4, "I"),
+        ("C1", 0, "know!"),
+        ("F0", 4, "Goodbye"),
+        ("F0", 2, None),
+        ("G0", 6, "Piccadilly,"),
+        ("A0", 6, None),
+        ("A#0", 4, None),
+        ("D1", 1, None),
+        ("D#1", 4, "Farewell"),
+        ("G0", 4, None),
+        ("A#0", 4, "Leicester"),
+        ("C1", 4, None),
+        ("D1", 1, "Square,"),
+        ("A#0", 6, "It's"),
+        ("C1", 6, "a"),
+        ("D1", 4, "long,"),
+        ("D1", 4, "long"),
+        ("D1", 6, "way"),
+        ("A#0", 6, "to"),
+        ("C1", 6, "Tipperary,"),
+        ("A#0", 6, None),
+        ("G0", 2, None),
+        ("F0", 4, None),
+        ("A#0", 4, "But"),
+        ("D1", 4, "my"),
+        ("A#0", 2, "heart's"),
+        ("C1", 4, "right"),
+        ("A#0", 0, 'there!"'),
+    ]
+
 
 class MusicWait:
 
@@ -563,7 +676,6 @@ class MusicWait:
         except:
             print("Failed to start MusicWait...")
 
-
     def __enter__(self):
         try:
             self.play()
@@ -571,7 +683,6 @@ class MusicWait:
             print("Failed to enter MusicWait...")
         finally:
             return self
-
 
     def __exit__(self, ex_type, ex_value, trace):
         try:
@@ -594,7 +705,7 @@ class MusicWait:
             if self._thread is not None:
                 self._thread.join()
                 self._thread = None
-        
+
             if self._lyrics:
                 print("")
         except:
@@ -683,7 +794,9 @@ class MusicWait:
                     if not self._play:
                         return
                     self._audio.play(
-                        self._scales[hz], self._notes[note], text if self._lyrics else None
+                        self._scales[hz],
+                        self._notes[note],
+                        text if self._lyrics else None,
                     )
         except:
             print("Failed to loop music...")
