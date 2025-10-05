@@ -5,6 +5,7 @@ import time
 import pyaudio as pa
 import numpy as np
 
+
 class Music:
 
     OH_SUSANNA = [
@@ -122,7 +123,6 @@ class Music:
         ("E0", 6, "doo-dah day!"),
         ("D0", 6, None),
         ("C0", 2, None),
-
         ("G0", 6, "I come"),
         ("G0", 6, "down"),
         ("E0", 6, "dah"),
@@ -148,7 +148,6 @@ class Music:
         ("C0", 6, None),
         ("E0", 6, None),
         ("C0", 4, None),
-
         ("C0", 5, "Gwine"),
         ("C0", 8, "to"),
         ("E0", 6, "run"),
@@ -176,7 +175,7 @@ class Music:
         ("C0", 2, "bay!"),
     ]
 
-    ANNIE_LAURIE=[
+    ANNIE_LAURIE = [
         ("E0", 5, None),
         ("D0", 8, None),
         ("C0", 3, None),
@@ -192,7 +191,6 @@ class Music:
         ("D0", 6, None),
         ("C0", 6, None),
         ("D0", 1, None),
-        
         ("E0", 5, None),
         ("D0", 8, None),
         ("C0", 3, None),
@@ -207,21 +205,18 @@ class Music:
         ("E0", 3, None),
         ("D0", 6, None),
         ("C0", 1, None),
-
         ("G0", 4, None),
         ("C1", 3, None),
         ("C1", 6, None),
         ("D1", 3, None),
         ("D1", 6, None),
         ("E1", 1, None),
-        
         ("G0", 4, None),
         ("C1", 3, None),
         ("C1", 6, None),
         ("D1", 3, None),
         ("D1", 6, None),
         ("E1", 1, None),
-        
         ("E1", 5, None),
         ("D1", 8, None),
         ("C1", 3, None),
@@ -231,7 +226,6 @@ class Music:
         ("A0", 6, None),
         ("G0", 4, None),
         ("E0", 2, None),
-        
         ("E0", 6, None),
         ("D0", 6, None),
         ("C0", 6, None),
@@ -242,11 +236,234 @@ class Music:
         ("C0", 1, None),
     ]
 
+    _ENTERTAINER_PRE = [
+        ("D2", 8, None),
+        ("E2", 8, None),
+        ("C2", 8, None),
+        ("A1", 6, None),
+        ("B1", 8, None),
+        ("G1", 6, None),
+        ("D1", 8, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("A0", 6, None),
+        ("B0", 8, None),
+        ("G0", 6, None),
+        ("D0", 8, None),
+        ("E0", 8, None),
+        ("C0", 8, None),
+        ("A-1", 6, None),
+        ("B-1", 8, None),
+        ("A-1", 8, None),
+        ("G#-1", 8, None),
+        ("G-1", 4, None),
+        ("G0", 6, None),
+    ]
+
+    _ENTERTAINER_A = [
+        ("D0", 8, None),
+        ("D#0", 8, None),
+        ("E0", 8, None),
+        ("C1", 6, None),
+        ("E0", 8, None),
+        ("C1", 6, None),
+        ("E0", 8, None),
+        ("C1", 3, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("D#1", 8, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 6, None),
+        ("B0", 8, None),
+        ("D1", 6, None),
+        ("C1", 3, None),
+        ("D0", 8, None),
+        ("D#0", 8, None),
+        ("E0", 8, None),
+        ("C1", 6, None),
+        ("E0", 8, None),
+        ("C1", 6, None),
+        ("E0", 8, None),
+        ("C1", 3, None),
+        ("A0", 8, None),
+        ("G0", 8, None),
+        ("F#0", 8, None),
+        ("A0", 8, None),
+        ("C1", 8, None),
+        ("E1", 6, None),
+        ("D1", 8, None),
+        ("C1", 8, None),
+        ("A0", 8, None),
+        ("D1", 3, None),
+        ("D0", 8, None),
+        ("D#0", 8, None),
+        ("E0", 8, None),
+        ("C1", 6, None),
+        ("E0", 8, None),
+        ("C1", 6, None),
+        ("E0", 8, None),
+        ("C1", 3, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("D#1", 8, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 6, None),
+        ("B0", 8, None),
+        ("D1", 6, None),
+        ("C1", 3, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 6, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("C1", 8, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 6, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("C1", 8, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 6, None),
+        ("B0", 8, None),
+        ("D1", 6, None),
+        ("C1", 3, None),
+    ]
+
+    _ENTERTAINER_B = [
+        ("E1", 8, None),
+        ("F1", 8, None),
+        ("F#1", 8, None),
+        ("G1", 6, None),
+        ("A1", 8, None),
+        ("G1", 6, None),
+        ("E1", 8, None),
+        ("F1", 8, None),
+        ("F#1", 8, None),
+        ("G1", 6, None),
+        ("A1", 8, None),
+        ("G1", 6, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("G0", 8, None),
+        ("A0", 8, None),
+        ("B0", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 8, None),
+        ("D1", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("G0", 8, None),
+        ("E1", 8, None),
+        ("F1", 8, None),
+        ("G1", 8, None),
+        ("A1", 8, None),
+        ("G1", 8, None),
+        ("E1", 8, None),
+        ("F1", 8, None),
+        ("G1", 6, None),
+        ("A1", 8, None),
+        ("G1", 6, None),
+        ("E1", 8, None),
+        ("F1", 8, None),
+        ("F#1", 8, None),
+        ("G1", 6, None),
+        ("A1", 8, None),
+        ("G1", 6, None),
+        ("G1", 8, None),
+        ("A1", 8, None),
+        ("A#1", 8, None),
+        ("B1", 8, None),
+        ("B1", 7, None),
+        ("r", 8, None),
+        ("B1", 6, None),
+        ("A1", 8, None),
+        ("F#1", 8, None),
+        ("D1", 8, None),
+        ("G1", 4, None),
+        ("r", 8, None),
+        ("E1", 8, None),
+        ("F1", 8, None),
+        ("F#1", 8, None),
+        ("G1", 6, None),
+        ("A1", 8, None),
+        ("G1", 6, None),
+        ("E1", 8, None),
+        ("F1", 8, None),
+        ("F#1", 8, None),
+        ("G1", 6, None),
+        ("A1", 8, None),
+        ("G1", 6, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("G0", 8, None),
+        ("A0", 8, None),
+        ("B0", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("E1", 8, None),
+        ("D1", 8, None),
+        ("C1", 8, None),
+        ("D1", 8, None),
+        ("C1", 4, None),
+        ("r", 8, None),
+        ("G0", 8, None),
+        ("F#0", 8, None),
+        ("G0", 8, None),
+        ("C1", 6, None),
+        ("A0", 8, None),
+        ("C1", 6, None),
+        ("A0", 8, None),
+        ("C1", 8, None),
+        ("A0", 8, None),
+        ("G0", 8, None),
+        ("C1", 8, None),
+        ("E1", 8, None),
+        ("G1", 6, None),
+        ("E1", 8, None),
+        ("C1", 8, None),
+        ("G0", 8, None),
+        ("A0", 6, None),
+        ("C1", 6, None),
+        ("E1", 8, None),
+        ("D1", 6, None),
+    ]
+
+    THE_ENTERTAINER = (
+        []
+        # + _ENTERTAINER_PRE
+        + _ENTERTAINER_A * 2
+        + _ENTERTAINER_B 
+        +[
+            ("C1", 3, None),
+        ]
+        +
+        _ENTERTAINER_B
+        + [
+            ("C1", 4, None),
+            ("C2", 4, None),
+        ]
+    )
+
+
 class MusicWait:
 
     def __init__(
         self,
-        music: Union[List[Tuple[str, int, Optional[str]]],List[Tuple[str, int, None]]] = Music.OH_SUSANNA,
+        music: Union[
+            List[Tuple[str, int, Optional[str]]], List[Tuple[str, int, None]]
+        ] = Music.OH_SUSANNA,
         bpm: int = 8,
         lyrics: bool = False,
     ):
@@ -333,10 +550,10 @@ class MusicWait:
 
         # 音階
         def make_scale(self):
-            res = {}
-            octave = -1
-            for n in range(0, 20):
-                hz = self.a_hz * 2 ** ((n - 9) / 12)
+            res = {"r": None}
+            octave = -2
+            for n in range(0, 48):
+                hz = self.a_hz * 2 ** ((n - 9) / 12 - 1)
                 if (n % 12) == 0:
                     octave += 1
                 name = self.code_names[n % 12] + str(octave)
@@ -346,9 +563,13 @@ class MusicWait:
         def play(self, hz, note, text: Optional[str] = None, gain=1.0):
             if text is not None:
                 print(text)
-            note2 = note*0.9
+
+            if hz is None:
+                time.sleep(note)
+                return
+            note2 = note * 0.9
             self.stream.write(self.__tone(hz, note2, gain).astype(np.float32).tobytes())
-            time.sleep(note*0.1)
+            time.sleep(note * 0.1)
 
     def loop_music(self):
 
