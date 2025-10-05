@@ -1,6 +1,7 @@
 from typing import List, Tuple, Optional, Union
 import threading
 import time
+import sys
 
 import pyaudio as pa
 import numpy as np
@@ -464,7 +465,7 @@ class Music:
         (
             "A0",
             6,
-            "dreary",
+            "dreary,",
         ),
         ("C1", 4, None),
         ("C1", 6, "If"),
@@ -478,7 +479,7 @@ class Music:
         ("G0", 6, None),
         ("A0", 6, "nebber"),
         ("A#0", 6, None),
-        ("C1", 6, "weary"),
+        ("C1", 6, "weary,"),
         ("F1", 4, None),
         ("D1", 6, "Wid"),
         ("C1", 6, "de"),
@@ -490,7 +491,7 @@ class Music:
         ("C1", 6, "dome"),
         ("A0", 6, "again"),
         ("F0", 5, None),
-        ("G0", 8, "susanna"),
+        ("G0", 8, "Susanna,"),
         ("A0", 6, None),
         ("C1", 4, None),
         ("C1", 8, "By"),
@@ -578,6 +579,9 @@ class MusicWait:
         if self._thread is not None:
             self._thread.join()
             self._thread = None
+        
+        if self._lyrics:
+            print("")
 
     class Audio:
 
@@ -644,7 +648,8 @@ class MusicWait:
 
         def play(self, hz, note, text: Optional[str] = None, gain=1.0):
             if text is not None:
-                print(text)
+                print(text, end=" ")
+                sys.stdout.flush()
 
             if hz is None:
                 time.sleep(note)
