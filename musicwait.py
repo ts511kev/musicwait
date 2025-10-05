@@ -447,7 +447,7 @@ class Music:
         + THE_ENTERTAINER_A * 2
         + THE_ENTERTAINER_B
         + [
-            ("C1", 3, None),
+            ("C1", 2, None),
         ]
         + THE_ENTERTAINER_B
         + [
