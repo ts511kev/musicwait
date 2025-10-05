@@ -551,37 +551,54 @@ class MusicWait:
         lyrics: bool = False,
     ):
 
-        self._play = False
-        self._lyrics = lyrics
-        self._music = music
-        self._audio = MusicWait.Audio(bpm=bpm)
-        self._scales = self._audio.make_scale()
-        self._notes = self._audio.make_note()
+        try:
+            self._play = False
+            self._lyrics = lyrics
+            self._music = music
+            self._audio = MusicWait.Audio(bpm=bpm)
+            self._scales = self._audio.make_scale()
+            self._notes = self._audio.make_note()
 
-        self._thread: Optional[threading.Thread] = None
+            self._thread: Optional[threading.Thread] = None
+        except:
+            print("Failed to start MusicWait...")
 
 
     def __enter__(self):
-        self.play()
-        return self
+        try:
+            self.play()
+        except:
+            print("Failed to enter MusicWait...")
+        finally:
+            return self
+
 
     def __exit__(self, ex_type, ex_value, trace):
-        self.stop()
+        try:
+            self.stop()
+        except:
+            print("Failed to exit MusicWait...")
 
     def play(self):
-        self._play = True
-        self._thread = threading.Thread(target=self.loop_music)
+        try:
+            self._play = True
+            self._thread = threading.Thread(target=self.loop_music)
 
-        self._thread.start()
+            self._thread.start()
+        except:
+            print("Failed to play music...")
 
     def stop(self):
-        self._play = False
-        if self._thread is not None:
-            self._thread.join()
-            self._thread = None
+        try:
+            self._play = False
+            if self._thread is not None:
+                self._thread.join()
+                self._thread = None
         
-        if self._lyrics:
-            print("")
+            if self._lyrics:
+                print("")
+        except:
+            print("Failed to stop music...")
 
     class Audio:
 
@@ -660,10 +677,14 @@ class MusicWait:
 
     def loop_music(self):
 
-        while self._play:
-            for hz, note, text in self._music:
-                if not self._play:
-                    return
-                self._audio.play(
-                    self._scales[hz], self._notes[note], text if self._lyrics else None
-                )
+        try:
+            while self._play:
+                for hz, note, text in self._music:
+                    if not self._play:
+                        return
+                    self._audio.play(
+                        self._scales[hz], self._notes[note], text if self._lyrics else None
+                    )
+        except:
+            print("Failed to loop music...")
+            return
