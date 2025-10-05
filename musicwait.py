@@ -444,17 +444,95 @@ class Music:
         []
         # + _ENTERTAINER_PRE
         + _ENTERTAINER_A * 2
-        + _ENTERTAINER_B 
-        +[
+        + _ENTERTAINER_B
+        + [
             ("C1", 3, None),
         ]
-        +
-        _ENTERTAINER_B
+        + _ENTERTAINER_B
         + [
             ("C1", 4, None),
             ("C2", 4, None),
         ]
     )
+
+    RING_RING_DE_BANJO = [
+        ("C1", 6, "De"),
+        ("C1", 6, "time"),
+        ("A0", 6, "is"),
+        ("F0", 5, "nebber"),
+        ("G0", 8, None),
+        ("A0", 6, "dreary",),
+        ("C1", 4, None),
+        ("C1", 6, "If"),
+        ("D1", 6, "de"),
+        ("C1", 6, "darkey"),
+        ("A0", 5, "nebber"),
+        ("F0", 8, None),
+        ("G0", 3, "groans,"),
+        ("G0", 6, "De"),
+        ("F0", 6, "ladies"),
+        ("G0", 6, None),
+        ("A0", 6, "nebber"),
+        ("A#0", 6, None),
+        ("C1", 6, "weary"),
+        ("F1", 4, None),
+        ("D1", 6, "Wid"),
+        ("C1", 6, "de"),
+        ("A0", 6, "rattle"),
+        ("G0", 5, "ob"),
+        ("G0", 8, "de"),
+        ("F0", 3, "hones"),
+        ("C1", 6, "Den"),
+        ("C1", 6, "dome"),
+        ("A0", 6, "again"),
+        ("F0", 5, None),
+        ("G0", 8, "susanna"),
+        ("A0", 6, None),
+        ("C1", 4, None),
+        ("C1", 8, "By"),
+        ("C1", 8, "de"),
+        ("D1", 6, "gaslights"),
+        ("C1", 6, None),
+        ("A0", 5, "ob"),
+        ("F0", 8, "de"),
+        ("G0", 3, "moon,"),
+        ("G0", 6, "We'll"),
+        ("F0", 5, "tum"),
+        ("G0", 8, "de"),
+        ("A0", 6, "old"),
+        ("A#0", 6, "Piano"),
+        ("C1", 6, None),
+        ("F1", 4, "When"),
+        ("D1", 6, "de"),
+        ("C1", 6, "banjo's"),
+        ("A0", 6, None),
+        ("G0", 5, "out"),
+        ("G0", 8, "ob"),
+        ("F0", 2, "tune."),
+        ("C1", 4, "Ring,"),
+        ("C1", 5, "ring"),
+        ("C1", 8, "de"),
+        ("A0", 6, "banjo!"),
+        ("C1", 4, None),
+        ("C1", 6, "I"),
+        ("D1", 6, "like"),
+        ("C1", 6, "dat"),
+        ("A0", 6, "good"),
+        ("F0", 6, "old"),
+        ("G0", 2, "song,"),
+        ("F0", 5, "Come"),
+        ("G0", 8, "again"),
+        ("A0", 6, None),
+        ("A#0", 6, "my"),
+        ("C1", 6, "true"),
+        ("F1", 4, "lub,"),
+        ("D1", 6, "Oh!"),
+        ("C1", 5, "wha"),
+        ("A0", 8, "you"),
+        ("G0", 5, "been"),
+        ("G0", 8, "so"),
+        ("F0", 3, "long."),
+    ]
 
 
 class MusicWait:
