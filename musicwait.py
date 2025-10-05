@@ -439,21 +439,14 @@ class Music:
         ("C1", 4, None),
         ("E1", 6, None),
         ("D1", 4, None),
+        ("C1", 1, None),
     ]
 
     THE_ENTERTAINER = (
         []
         # + _ENTERTAINER_PRE
         + THE_ENTERTAINER_A * 2
-        + THE_ENTERTAINER_B
-        + [
-            ("C1", 2, None),
-        ]
-        + THE_ENTERTAINER_B
-        + [
-            ("C1", 4, None),
-            ("C2", 4, None),
-        ]
+        + THE_ENTERTAINER_B * 2
     )
 
     RING_RING_DE_BANJO = [
