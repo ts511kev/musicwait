@@ -559,9 +559,9 @@ class MusicWait:
 
         self._thread: Optional[threading.Thread] = None
 
-        self.play()
 
     def __enter__(self):
+        self.play()
         return self
 
     def __exit__(self, ex_type, ex_value, trace):
