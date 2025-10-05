@@ -135,7 +135,7 @@ class Music:
         ("D0", 3, None),
         ("E0", 6, "doo-dah!"),
         ("D0", 3, None),
-        ("G0", 6, "I go "),
+        ("G0", 6, "I go"),
         ("G0", 6, "back"),
         ("E0", 6, "home"),
         ("G0", 6, "wid a"),
