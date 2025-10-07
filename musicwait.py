@@ -739,15 +739,17 @@ class MusicWait:
         music: Union[
             List[Tuple[str, int, Optional[str]]], List[Tuple[str, int, None]]
         ] = Music.OH_SUSANNA,
-        bpm: int = 8,
+        speed: float = 1.0,
         lyrics: bool = False,
     ):
 
         try:
+            if speed <= 0:
+                raise ValueError("speed must me > 0")
             self._play = False
             self._lyrics = lyrics
             self._music = music
-            self._audio = MusicWait.Audio(bpm=bpm)
+            self._audio = MusicWait.Audio(bpm=8 * speed)
             self._scales = self._audio.make_scale()
             self._notes = self._audio.make_note()
 
